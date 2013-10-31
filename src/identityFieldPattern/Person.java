@@ -2,11 +2,12 @@ package identityFieldPattern;
 
 public class Person {
 
-    private long id;
+    public long PLACEHOLDER_ID = -1;
+    private long id = PLACEHOLDER_ID;
     private String name;
     
     public Person(){
-        id = 0;
+        // An object that's been created in memory but not saved to the database will not have a value for its key
         name = "";
     }
     
@@ -18,13 +19,9 @@ public class Person {
         this.id = id;
     }
 
-
-
     public String getName() {
         return name;
     }
-
-
 
     public void setName(String name) {
         this.name = name;

@@ -8,7 +8,13 @@ public class Main {
     public static void main(String[] args) {
         PersonManager manager = new PersonManager();
         //manager.printAll();
-        Person found = manager.find(1);
-        System.out.println("result:" + found.getName());
+        Object found = manager.find(1);
+        if (found != null){
+            Person person = (Person) found;
+            System.out.println("result:" + person.getName());
+        }else{
+            System.out.println("not found!");
+        }
+        
     }
 }
