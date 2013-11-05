@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 
+import common.database.DBRegistry;
+
 public class PlayerTDG {
 	public static ResultSet findAllPlayers() throws SQLException{
 		final String SELECT_SQL = "SELECT * FROM players p";

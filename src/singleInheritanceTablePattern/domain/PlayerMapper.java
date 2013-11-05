@@ -8,7 +8,6 @@ import java.util.List;
 import singleInheritanceTablePattern.database.PlayerTDG;
 
 
-
 public class PlayerMapper {
 	
 	public static List<Player> findAllPlayer(){

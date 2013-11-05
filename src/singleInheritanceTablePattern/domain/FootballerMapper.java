@@ -7,6 +7,7 @@ import java.util.List;
 
 import singleInheritanceTablePattern.database.PlayerTDG;
 
+
 public class FootballerMapper {
 	
 	public static List<Footballer> findAllFootballers(){
