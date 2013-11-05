@@ -1,16 +1,9 @@
-package driver;
+package singleInheritanceTablePattern.driver;
 
 import java.sql.SQLException;
 import java.util.List;
 
-import domain.Bowler;
-import domain.BowlerMapper;
-import domain.Cricketer;
-import domain.CricketerMapper;
-import domain.Footballer;
-import domain.FootballerMapper;
-import domain.Player;
-import domain.PlayerMapper;
+import singleInheritanceTablePattern.domain.*;
 
 public class Driver {
 

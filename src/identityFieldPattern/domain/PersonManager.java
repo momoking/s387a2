@@ -1,4 +1,5 @@
-package identityFieldPattern;
+package identityFieldPattern.domain;
+
 
 import java.util.ArrayList;
 

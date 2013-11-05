@@ -1,4 +1,4 @@
-package technical;
+package singleInheritanceTablePattern.technical;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

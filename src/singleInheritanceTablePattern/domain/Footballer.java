@@ -1,4 +1,4 @@
-package domain;
+package singleInheritanceTablePattern.domain;
 
 public class Footballer extends Player {
 	

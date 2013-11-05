@@ -1,10 +1,10 @@
-package database;
+package singleInheritanceTablePattern.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import technical.Registry;
+import singleInheritanceTablePattern.technical.Registry;
 
 public class DBRegistry {
 	private static DBRegistry soleInstance;

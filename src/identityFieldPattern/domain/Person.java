@@ -1,4 +1,4 @@
-package identityFieldPattern;
+package identityFieldPattern.domain;
 
 public class Person {
 

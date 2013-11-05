@@ -1,4 +1,7 @@
-package identityFieldPattern;
+package identityFieldPattern.driver;
+
+import identityFieldPattern.domain.Person;
+import identityFieldPattern.domain.PersonManager;
 
 public class Main {
 
