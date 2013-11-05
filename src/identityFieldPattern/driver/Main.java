@@ -13,7 +13,7 @@ public class Main {
         System.out.println("BROWSE DATA");
         manager.printAll();
         
-        Object found = manager.find(1);
+        Object found = manager.find(10);
         if (found != null){
             Person person = (Person) found;
             System.out.println("RESULT:" + person.getName());
