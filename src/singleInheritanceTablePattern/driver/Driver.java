@@ -18,10 +18,10 @@ public class Driver {
 		Bowler b1 = new Bowler(4, "David", 47, 68);
 		
 		try {
-			/*PlayerMapper.insertToDB(p1);
+			PlayerMapper.insertToDB(p1);
 			FootballerMapper.insertToDB(f1);
 			CricketerMapper.insertToDB(c1);
-			BowlerMapper.insertToDB(b1);*/
+			BowlerMapper.insertToDB(b1);
 			
 			Footballer f2 =FootballerMapper.findFootballerById(2);
 			System.out.println(f2);

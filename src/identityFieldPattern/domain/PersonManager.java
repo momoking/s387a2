@@ -1,65 +1,55 @@
 package identityFieldPattern.domain;
 
-
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+
+import common.database.DBRegistry;
 
 public class PersonManager {
 
-    private ArrayList<Person> person;
+    private ArrayList<Person> personList;
 
     public PersonManager() {
-        if (person == null) {
-            person = new ArrayList<Person>();
+        if (personList == null) {
+            personList = new ArrayList<Person>();
         }
-        load();
+        try {
+            load();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
-    private void load() {
-        /**
-         * Here, normally we would load the data from mysql person table but for
-         * the sake of simplicity, I would simulate the loading by filling my
-         * obj list like so:
-         */
-        Person p1 = new Person();
-        p1.setId(1);
-        p1.setName("person_one");
-
-        Person p2 = new Person();
-        p2.setId(2);
-        p2.setName("person_two");
-
-        Person p3 = new Person();
-        p3.setId(3);
-        p3.setName("person_three");
-
-        person.add(p1);
-        person.add(p2);
-        person.add(p3);
-
+    private void load() throws SQLException {
+        final String SELECT_SQL = "SELECT * FROM persons";
+        Connection con = DBRegistry.getUniqueInstance().getDBConnection();
+        PreparedStatement ps = con.prepareStatement(SELECT_SQL);
+        ResultSet result = ps.executeQuery();
+        while (result.next()) {
+            Person p = new Person();
+            p.setId(result.getInt("id"));
+            p.setName(result.getString("name"));
+            personList.add(p);
+        }
     }
 
     public void printAll() {
-        for (int i = 0; i < person.size(); i++) {
-            System.out.println(person.get(i).getId() + person.get(i).getName());
+        for (int i = 0; i < personList.size(); i++) {
+            System.out.println(personList.get(i));
         }
     }
 
     public Person find(long id) {
-        System.out.println("searching for person with id:" + id);
-        for (int i = 0; i < person.size(); i++) {
-            if (person.get(i).getId() == id) {
-                return person.get(i);
+        System.out.println("SEARCH PERSON BY ID:" + id);
+        for (int i = 0; i < personList.size(); i++) {
+            if (personList.get(i).getId() == id) {
+                return personList.get(i);
             }
         }
         return null;
-    }
-
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
     }
 
 }
