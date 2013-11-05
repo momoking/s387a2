@@ -7,11 +7,9 @@
 <title></title>
 </head>
 <body>
-<h1>DEMO</h1>
-<ol>
-<li><a href="identityFieldPattern">Identity Field Pattern</a></li>
-<li><a href="singleInheritanceTablePattern">Single Inheritance Table Pattern</a></li>
-<li>... add yours here cherlyn and saud</li>
-</ol>
+
+<p>demo by Haiyue</p>
+
+
 </body>
 </html>
