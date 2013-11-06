@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/FetchIdentityFieldServlet")
 public class FetchIdentityFieldServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+    private static final long serialVersionUID = 1L;
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -28,24 +28,35 @@ public class FetchIdentityFieldServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	    System.out.println("called");
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+     *      response)
+     */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // System.out.println("called");
         PersonManager manager = new PersonManager();
-        ArrayList<Person> list = manager.getAll();
-        System.out.println("debug" + list.size());
-        request.setAttribute("persons", list);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("identityFieldPattern/index.jsp");
-        dispatcher.forward(request, response);
-	}
+        ArrayList<Person> list = new ArrayList<Person>();
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
+        if (request.getParameter("choice").equals("byid")) {
+            Person found = new Person();
+            found = manager.find(Integer.parseInt(request.getParameter("searchfield")));
+            list.add(found);
+        } else {
+            list = manager.getAll();
+        }
+
+        request.setAttribute("persons", list);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/identityFieldPattern/index.jsp");
+        dispatcher.forward(request, response);
+    }
+
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+     *      response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,
+            IOException {
+        // TODO Auto-generated method stub
+    }
 
 }

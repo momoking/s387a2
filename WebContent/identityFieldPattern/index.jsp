@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -7,30 +7,32 @@
 <title></title>
 </head>
 <body>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="identityFieldPattern.domain.Person" %>
+	<%@ page import="java.util.ArrayList"%>
+	<%@ page import="identityFieldPattern.domain.Person"%>
 
-<p>demo by Haiyue</p>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
-<form action="/s387a2/FetchIdentityFieldServlet" method="get">
-<input type="submit" value="Get all data">
-</form>
+	<h2>Identity Field Pattern Demo</h2>
 
+	<c:if test="${empty persons}">
+	</c:if>
+	<form action="/s387a2/FetchIdentityFieldServlet" method="get">
+		<input type="radio" name="choice" value="all" checked> all
+		<input type="radio" name="choice" value="byid"> by id
+		<input type="text" name="searchfield">
+		<input type="submit" value="Fetch Person Data">
+	</form>
+	<br />
 
-<table>
-<%
-if (request.getAttribute("persons") != null){
-	ArrayList<Person> list =  (ArrayList<Person>) request.getAttribute("persons");
-	
-%>
-
-<table>
-<%	for (Person p:list){ %>
-<tr><td><% p.getId(); %></td><td><% p.getName(); %></td></tr>
-<% } %>
-</table>
-<% } %>
-
+	<table>
+		<c:forEach items="${persons}" var="person">
+			<tr>
+				<td>Id: ${person.id}</td>
+				<td>Name: ${person.name}</td>
+			</tr>
+		</c:forEach>
+	</table>
 
 </body>
 </html>

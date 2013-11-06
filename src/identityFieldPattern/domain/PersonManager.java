@@ -46,7 +46,7 @@ public class PersonManager {
         return personList;
     }
     
-    public Person find(long id) {
+    public Person find(int id) {
         System.out.println("SEARCH PERSON BY ID:" + id);
         for (int i = 0; i < personList.size(); i++) {
             if (personList.get(i).getId() == id) {
