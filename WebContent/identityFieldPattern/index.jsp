@@ -12,8 +12,8 @@
 
 <p>demo by Haiyue</p>
 
-<form action="IndexServlet" method="get">
-<input type="button" value="Get all data">
+<form action="/s387a2/FetchIdentityFieldServlet" method="get">
+<input type="submit" value="Get all data">
 </form>
 
 

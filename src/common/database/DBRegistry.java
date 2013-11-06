@@ -20,13 +20,14 @@ public class DBRegistry {
     }
     private void iniDBConnection() {
         try {
-            String dbDriverClass = Registry.getUniqueInstance().getProperty("DbDriver");
-            String dbConnectionString = Registry.getUniqueInstance().getProperty("DbConnectionString");
-            String dbUser = Registry.getUniqueInstance().getProperty("user");
-            String dbPassword = Registry.getUniqueInstance().getProperty("password");
-            Class.forName(dbDriverClass);
-            
-            dbConnection = DriverManager.getConnection("jdbc:" + dbConnectionString, dbUser, dbPassword);
+//            String dbDriverClass = Registry.getUniqueInstance().getProperty("DbDriver");
+//            String dbConnectionString = Registry.getUniqueInstance().getProperty("DbConnectionString");
+//            String dbUser = Registry.getUniqueInstance().getProperty("user");
+//            String dbPassword = Registry.getUniqueInstance().getProperty("password");
+//            Class.forName(dbDriverClass);
+//            dbConnection = DriverManager.getConnection("jdbc:" + dbConnectionString, dbUser, dbPassword);
+            Class.forName("com.mysql.jdbc.Driver");
+            dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/soen387_A2", "root", "root");
         } 
         catch (Exception e) {
             e.printStackTrace();
