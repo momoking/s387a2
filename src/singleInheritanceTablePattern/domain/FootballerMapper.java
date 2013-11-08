@@ -1,12 +1,11 @@
-package singleInheritanceTablePattern.domain;
+package domain;
 
 import java.util.ArrayList;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import singleInheritanceTablePattern.database.PlayerTDG;
-
+import database.PlayerTDG;
 
 public class FootballerMapper {
 	
@@ -48,7 +47,7 @@ public class FootballerMapper {
 		return footballer;
 	}
 	public static void insertToDB(Footballer footballer) throws SQLException{
-		PlayerTDG.insertPlayer(footballer.getId(), footballer.getName(), "F", footballer.getClub(), 0, 0);
+		PlayerTDG.insertPlayer(footballer.getName(), "F", footballer.getClub(), 0, 0);
 	}
 	public static void deleteFromDB(Footballer footballer) throws SQLException{
 		PlayerTDG.deletePlayer(footballer.getId());

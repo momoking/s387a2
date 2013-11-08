@@ -1,4 +1,4 @@
-package singleInheritanceTablePattern.domain;
+package domain;
 
 public class Footballer extends Player {
 	
@@ -7,6 +7,11 @@ public class Footballer extends Player {
 	//this constructed is used when footballer comes out of the database
 	public Footballer(int id, String name, String club){
 		super(id, name);
+		this.club = club;
+	}
+	//this constructed is used when footballer goes into the database
+	public Footballer(String name, String club){
+		super(name);
 		this.club = club;
 	}
 	public String getClub() {

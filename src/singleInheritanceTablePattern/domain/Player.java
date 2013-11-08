@@ -1,4 +1,4 @@
-package singleInheritanceTablePattern.domain;
+package domain;
 
 public class Player {
 
@@ -9,7 +9,11 @@ public class Player {
 	public Player(int id, String name) {
 		this.id = id;
 		this.name = name;
-	}	
+	}
+	//this constructed is used when player goes into the database
+	public Player(String name) {
+		this.name = name;
+	}
 	public int getId() {
 		return id;
 	}

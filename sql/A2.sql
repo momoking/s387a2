@@ -9,7 +9,10 @@ CREATE TABLE players (
 	bowling_average int(11) unsigned DEFAULT NULL,
 	PRIMARY KEY (id)
 );
-
+INSERT INTO players (name, discriminator) VALUES ('Joe','P');
+INSERT INTO players (name, discriminator, club) VALUES ('Isabelle',  'F', 'Five Stars');
+INSERT INTO players (name, discriminator, batting_average) VALUES ('Alyssa', 'C', 50);
+INSERT INTO players (name, discriminator, batting_average, bowling_average) VALUES ('David', 'B', 47, 68);
 
 
 DROP TABLE IF EXISTS `persons`;

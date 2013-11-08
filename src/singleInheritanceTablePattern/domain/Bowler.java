@@ -1,4 +1,4 @@
-package singleInheritanceTablePattern.domain;
+package domain;
 
 public class Bowler extends Cricketer {
 	
@@ -7,6 +7,11 @@ public class Bowler extends Cricketer {
 	//this constructed is used when bowler comes out of the database
 	public Bowler(int id, String name, int batting_average, int bowling_average) {
 		super(id, name, batting_average);
+		this.bowling_average = bowling_average;
+	}
+	//this constructed is used when bowler goes into the database
+	public Bowler(String name, int batting_average, int bowling_average) {
+		super(name, batting_average);
 		this.bowling_average = bowling_average;
 	}
 	public int getBowling_average() {

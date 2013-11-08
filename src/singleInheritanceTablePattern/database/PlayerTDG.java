@@ -1,12 +1,9 @@
-package singleInheritanceTablePattern.database;
+package database;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
-
-import common.database.DBRegistry;
 
 public class PlayerTDG {
 	public static ResultSet findAllPlayers() throws SQLException{
@@ -33,49 +30,45 @@ public class PlayerTDG {
 		ps.executeUpdate();
 	}
 
-	public static void insertPlayer(int id, String name, String discriminator, 
+	public static void insertPlayer(String name, String discriminator, 
 			String club, int batting_average, int bowling_average) throws SQLException{
 
 		Connection con = DBRegistry.getUniqueInstance().getDBConnection();		
 		String INSERT_SQL;
 
 		if(discriminator.equals("P")){
-			INSERT_SQL ="INSERT INTO players (id,name,discriminator) VALUES (?,?,?)";
+			INSERT_SQL ="INSERT INTO players (name,discriminator) VALUES (?,?)";
 			PreparedStatement ps = con.prepareStatement(INSERT_SQL);
-			ps.setInt(1, id);
-			ps.setString(2, name);
-			ps.setString(3, discriminator);
+			ps.setString(1, name);
+			ps.setString(2, discriminator);
 			ps.executeUpdate();
 		}
 		if(discriminator.equals("F")){
-			INSERT_SQL ="INSERT INTO players (id,name,discriminator,club) VALUES (?,?,?,?)";
+			INSERT_SQL ="INSERT INTO players (name,discriminator,club) VALUES (?,?,?)";
 			PreparedStatement ps = con.prepareStatement(INSERT_SQL);
-			ps.setInt(1, id);
-			ps.setString(2, name);
-			ps.setString(3, discriminator);
-			ps.setString(4, club);				
+			ps.setString(1, name);
+			ps.setString(2, discriminator);
+			ps.setString(3, club);				
 			ps.executeUpdate();
 		}
 		if(discriminator.equals("C")){
-			INSERT_SQL ="INSERT INTO players (id,name,discriminator,club,batting_average) VALUES (?,?,?,?,?)";
+			INSERT_SQL ="INSERT INTO players (name,discriminator,club,batting_average) VALUES (?,?,?,?)";
 			PreparedStatement ps = con.prepareStatement(INSERT_SQL);
-			ps.setInt(1, id);
-			ps.setString(2, name);
-			ps.setString(3, discriminator);
-			ps.setString(4, club);		
-			ps.setInt(5, batting_average);			
+			ps.setString(1, name);
+			ps.setString(2, discriminator);
+			ps.setString(3, club);		
+			ps.setInt(4, batting_average);			
 			ps.executeUpdate();
 		}
 		if(discriminator.equals("B")){
-			INSERT_SQL ="INSERT INTO players (id,name,discriminator,club,batting_average," +
-					"bowling_average) VALUES (?,?,?,?,?,?)";
+			INSERT_SQL ="INSERT INTO players (name,discriminator,club,batting_average," +
+					"bowling_average) VALUES (?,?,?,?,?)";
 			PreparedStatement ps = con.prepareStatement(INSERT_SQL);
-			ps.setInt(1, id);
-			ps.setString(2, name);
-			ps.setString(3, discriminator);
-			ps.setString(4, club);		
-			ps.setInt(5, batting_average);		
-			ps.setInt(6, bowling_average);		
+			ps.setString(1, name);
+			ps.setString(2, discriminator);
+			ps.setString(3, club);		
+			ps.setInt(4, batting_average);		
+			ps.setInt(5, bowling_average);		
 			ps.executeUpdate();
 		}
 	}
