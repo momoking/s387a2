@@ -18,7 +18,7 @@ width: 80px;
 	<%@ page import="singleInheritanceTablePattern.domain.*"%>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-
+<a href="/s387a2/index.jsp">HOME</a>
 	<center><h1>Single Inheritance Table Pattern Demo</h1></center>
 <div style="margin-top: 50px;margin-left:10px;">
 <div style="border-right: 1px solid #0099cc; height: 500px; width: 150px; position: absolute;">

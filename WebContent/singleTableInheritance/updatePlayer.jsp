@@ -7,6 +7,7 @@
 <title></title>
 </head>
 <body>
+<a href="/s387a2/index.jsp">HOME</a>
 <center><h1>Single Inheritance Table Pattern Demo</h1></center>
 <div style="margin-top: 50px;">
 <div style="border-right: 1px solid #0099cc; height: 500px; width: 150px; position: absolute;">
