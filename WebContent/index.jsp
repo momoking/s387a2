@@ -11,7 +11,8 @@
 <ol>
 <li><a href="identityFieldPattern">Identity Field Pattern</a></li>
 <li><a href="singleTableInheritance">Single Inheritance Table Pattern</a></li>
-<li>... add yours here cherlyn and saud</li>
+<li><a href="serializedLOBpatternJSP">Serialized LOB Pattern</a></li>
+<li><a href="">Foreign key table Pattern</a></li>
 </ol>
 </body>
 </html>

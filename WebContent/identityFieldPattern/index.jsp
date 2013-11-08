@@ -13,6 +13,7 @@
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
+<a href="/s387a2/index.jsp">HOME</a>
 	<h2>Identity Field Pattern Demo</h2>
 
 	<c:if test="${empty persons}">

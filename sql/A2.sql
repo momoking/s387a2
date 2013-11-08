@@ -56,4 +56,10 @@ VALUES
 	(29,'Lillian Osborn'),
 	(30,'Howard Silva');
 
+	
+CREATE TABLE IF NOT EXISTS `persondetails` (
+  `val1` varchar(150) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 COMMIT; 
