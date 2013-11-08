@@ -1,4 +1,4 @@
-package controller;
+package singleInheritanceTablePattern.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import domain.PlayerMapper;
+import singleInheritanceTablePattern.domain.PlayerMapper;
 
 /**
  * Servlet implementation class DeletePlayerServlet
@@ -48,7 +48,7 @@ public class DeletePlayerServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		request.setAttribute("deleted", "Player has been removed from database!");
-		forward("/deletePlayer.jsp", request, response);
+		forward("/singleTableInheritance/deletePlayer.jsp", request, response);
 	}
 	
 	protected void forward(String target, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

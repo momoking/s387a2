@@ -1,4 +1,4 @@
-package controller;
+package singleInheritanceTablePattern.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import domain.*;
+import singleInheritanceTablePattern.domain.*;
 
 /**
  * Servlet implementation class updatePlayerServlet
@@ -59,7 +59,7 @@ public class updatePlayerServlet extends HttpServlet {
 				BowlerMapper.updateDB(bowler);			
 			}
 			request.setAttribute("updated", "Player has been modified!");
-			forward("/updatePlayer.jsp", request, response);
+			forward("/singleTableInheritance/updatePlayer.jsp", request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

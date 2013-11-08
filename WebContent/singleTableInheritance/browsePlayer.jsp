@@ -15,21 +15,22 @@ width: 80px;
 <body>
 	<%@ page import="java.util.ArrayList"%>
 	<%@ page import="java.util.List"%>
-	<%@ page import="domain.*"%>
+	<%@ page import="singleInheritanceTablePattern.domain.*"%>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 	<center><h1>Single Inheritance Table Pattern Demo</h1></center>
 <div style="margin-top: 50px;margin-left:10px;">
 <div style="border-right: 1px solid #0099cc; height: 500px; width: 150px; position: absolute;">
-<p style="margin-bottom: 10px;"><a href="<%= request.getContextPath() %>/browsePlayer.jsp">Browse Players</a></p>
-<p style="margin-bottom: 10px;"><a href="<%= request.getContextPath() %>/insertPlayer.jsp">Add New Player</a></p>
-<p style="margin-bottom: 10px;"><a href="<%= request.getContextPath() %>/updatePlayer.jsp">Update Player</a></p>
-<p style="margin-bottom: 10px;"><a href="<%= request.getContextPath() %>/deletePlayer.jsp">Delete Player</a></p>
+<p style="margin-bottom: 10px;"><a href="<%= request.getContextPath() %>/singleTableInheritance/browsePlayer.jsp">Browse Players</a></p>
+<p style="margin-bottom: 10px;"><a href="<%= request.getContextPath() %>/singleTableInheritance/insertPlayer.jsp">Add New Player</a></p>
+<p style="margin-bottom: 10px;"><a href="<%= request.getContextPath() %>/singleTableInheritance/updatePlayer.jsp">Update Player</a></p>
+<p style="margin-bottom: 10px;"><a href="<%= request.getContextPath() %>/singleTableInheritance/deletePlayer.jsp">Delete Player</a></p>
 </div>
 
+
 <div style="left: 450px; top: 150px; position: absolute;">	
-	<form action="BrowsePlayerServlet" method="get">
+	<form action="/s387a2/BrowsePlayerServlet" method="get">
 		<input type="radio" name="choice" value="all"> All 
 		<input type="radio" name="choice" value="byid"> By Id
 		<input type="text" name="searchfield">

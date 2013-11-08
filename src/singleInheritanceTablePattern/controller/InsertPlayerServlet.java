@@ -1,4 +1,4 @@
-package controller;
+package singleInheritanceTablePattern.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import domain.*;
+import singleInheritanceTablePattern.domain.*;
 
 /**
  * Servlet implementation class InsertPlayerServlet
@@ -59,7 +59,7 @@ public class InsertPlayerServlet extends HttpServlet {
 				BowlerMapper.insertToDB(bowler);				
 			}
 			request.setAttribute("inserted", "New player has been added into the database!");
-			forward("/insertPlayer.jsp", request, response);
+			forward("/singleTableInheritance/insertPlayer.jsp", request, response);
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

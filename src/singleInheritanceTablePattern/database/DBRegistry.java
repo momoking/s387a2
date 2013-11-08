@@ -1,4 +1,4 @@
-package database;
+package singleInheritanceTablePattern.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -25,7 +25,7 @@ public class DBRegistry {
 			String dbPassword = Registry.getUniqueInstance().getProperty("password");*/
 			Class.forName("com.mysql.jdbc.Driver");
 			
-			dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/soen387_A2", "root", "");
+			dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/soen387_A2", "root", "root");
 		} 
 		catch (Exception e) {
 			e.printStackTrace();
