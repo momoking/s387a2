@@ -1,19 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=US-ASCII"
-    pageEncoding="US-ASCII"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title></title>
 </head>
 <body>
-<a href="/s387a2/index.jsp">HOME</a>
+	<%@ include file="/includes/header.jsp"%>
 	<h2>Serialized LOB Pattern</h2>
 
 	<form action="/s387a2/StorePersonDetailsServlet" method="get">
-		<input type="text" name="namePerson">
-		<input type="text" name="agePerson">
-		<input type="text" name="genderPerson">
+		name:<input type="text" name="namePerson">
+		age:<input type="text" name="agePerson">
+		sex:<input type="text" name="genderPerson">
 		<input type="submit" value="Add Person">
 	</form>
 	<br />

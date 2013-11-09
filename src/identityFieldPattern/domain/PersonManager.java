@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import common.database.DBRegistry;
+import common.database.*;
 
 public class PersonManager {
 
@@ -25,7 +26,9 @@ public class PersonManager {
 
     private void load() throws SQLException {
         final String SELECT_SQL = "SELECT * FROM persons";
-        Connection con = DBRegistry.getUniqueInstance().getDBConnection();
+//        Connection con = DBRegistry.getUniqueInstance().getDBConnection(); //local connection
+        SSHConnection ssh = DBRegistryViaSSH.getConnection();
+        Connection con = ssh.getConnection();
         PreparedStatement ps = con.prepareStatement(SELECT_SQL);
         ResultSet result = ps.executeQuery();
         while (result.next()) {
